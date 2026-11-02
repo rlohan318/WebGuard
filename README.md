@@ -61,12 +61,29 @@ After a run, open the HTML report with:
 npx playwright show-report
 ```
 
+## Interactive dashboard
+
+Start the local dashboard:
+
+```bash
+npm run dashboard
+```
+
+Open [http://127.0.0.1:4173](http://127.0.0.1:4173), choose the browser, then select **Run smoke test**. The dashboard displays run status and Playwright output while the test executes. It runs the homepage smoke test, which expects the Automation Exercise page.
+
+To try a predictable failure without depending on an external site, choose **Use built-in fault demo**. This local sample storefront deliberately has the wrong document title and does not include the expected Automation Exercise heading. The smoke test reports both problems, including the observed title and visible headings. Use **Preview demo website** to inspect the sample.
+
+A custom URL must serve the expected Automation Exercise page; using an unrelated site such as Google will fail the assertions.
+
+The server binds to loopback and is intended for local use only. Run data is held in memory for the lifetime of the dashboard process and is not uploaded. Set `PORT` to use a different local port.
+
 Generated reports, test results, screenshots, and traces are excluded from Git by `.gitignore`.
 
 ## Project layout
 
 ```text
 tests/ui/              Browser-based smoke tests
+dashboard/             Local interactive test runner and dashboard
 playwright.config.ts   Shared Playwright settings and browser projects
 repport.md             Detailed academic project report and implementation status
 ```

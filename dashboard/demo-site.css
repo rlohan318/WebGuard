@@ -1,0 +1,97 @@
+:root {
+  --ink: #26392f;
+  --muted: #788179;
+  --paper: #f8f6f0;
+  --green: #697d63;
+  --line: #e7e4dc;
+}
+
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body { background: var(--paper); color: var(--ink); font-family: Georgia, "Times New Roman", serif; margin: 0; }
+a { color: inherit; text-decoration: none; }
+button { font: inherit; }
+
+.store-header { align-items: center; border-bottom: 1px solid var(--line); display: flex; height: 75px; justify-content: space-between; padding: 0 7.5%; }
+.store-brand { align-items: center; display: flex; font-size: 19px; font-weight: 700; gap: 9px; letter-spacing: -.5px; }
+.store-mark { align-items: center; background: #dce5d2; border-radius: 50%; color: #566a50; display: flex; font-size: 15px; height: 30px; justify-content: center; width: 30px; }
+.store-header nav { display: flex; gap: 34px; }
+.store-header nav a { color: #667166; font-family: Arial, sans-serif; font-size: 11px; }
+.store-header nav a:hover { color: #26392f; }
+.cart-button { background: transparent; border: 1px solid #d5d9d0; border-radius: 20px; color: #435347; font-family: Arial, sans-serif; font-size: 10px; padding: 8px 12px; }
+.cart-button span { background: #e1e9d8; border-radius: 50%; margin-left: 7px; padding: 3px 6px; }
+.hero { align-items: center; display: grid; gap: 4%; grid-template-columns: 1fr 1fr; margin: auto; max-width: 1280px; min-height: 480px; padding: 54px 7.5%; }
+.hero-copy { padding: 10px 0; }
+.eyebrow { align-items: center; color: #788775; display: flex; font: 700 9px/1.5 Arial, sans-serif; gap: 9px; letter-spacing: 1.7px; margin: 0 0 18px; }
+.eyebrow > span { background: #93a187; display: inline-block; height: 1px; width: 21px; }
+.hero h1 { color: #2b3c31; font-size: clamp(42px, 5.2vw, 69px); font-weight: 400; letter-spacing: -3.2px; line-height: 1.04; margin: 0; }
+.hero h1 em { color: #7a8a70; font-weight: 400; }
+.intro { color: #788078; font: 13px/1.8 Arial, sans-serif; margin: 20px 0 24px; max-width: 350px; }
+.shop-button { align-items: center; background: #647a60; border-radius: 3px; color: #fff; display: inline-flex; font: 11px Arial, sans-serif; gap: 21px; padding: 13px 15px; }
+.shop-button:hover { background: #52684f; }
+.hero-caption { align-items: center; color: #91968c; display: flex; font: 8px Arial, sans-serif; gap: 8px; letter-spacing: 1.4px; margin-top: 43px; }
+.caption-line { background: #aab3a4; height: 1px; width: 26px; }
+.hero-art { align-items: center; background: #e8e8d9; display: flex; height: 365px; justify-content: center; overflow: hidden; position: relative; }
+.sun-disc { background: #d9b78e; border-radius: 50%; height: 191px; opacity: .8; position: absolute; right: 12%; top: 11%; width: 191px; }
+.art-shadow { background: #d2d3c4; border-radius: 50%; bottom: 11%; height: 36px; position: absolute; width: 67%; }
+.vase { background: linear-gradient(90deg, #a5a18a, #c0bba3 47%, #99977e); border-radius: 42% 42% 36% 36% / 24% 24% 19% 19%; bottom: 12%; height: 164px; left: 32%; position: absolute; width: 112px; }
+.vase::before { background: #a9a58f; border-radius: 48% 48% 8px 8px; content: ""; height: 46px; left: 31px; position: absolute; top: -19px; width: 50px; }
+.vase span { border-left: 1px solid rgba(255,255,255,.25); height: 100px; left: 25px; position: absolute; top: 34px; transform: rotate(4deg); }
+.plant-pot { background: #bd7657; bottom: 13%; border-radius: 7px 7px 27px 27px; height: 73px; position: absolute; right: 13%; width: 78px; }
+.plant-pot::before { background: #a9674d; content: ""; height: 10px; left: -6px; position: absolute; top: -4px; width: 90px; }
+.plant-stem { background: #667d5a; bottom: 32%; height: 135px; position: absolute; right: 49%; transform-origin: bottom; width: 2px; }
+.stem-two { right: 30%; transform: rotate(22deg); }
+.stem-three { right: 60%; transform: rotate(-24deg); }
+.leaf { background: #738a65; border-radius: 100% 0 100% 0; height: 35px; position: absolute; right: 36%; top: 35%; transform: rotate(22deg); width: 18px; }
+.leaf-two { right: 28%; top: 46%; transform: rotate(83deg); }
+.leaf-three { right: 51%; top: 42%; transform: rotate(-48deg); }
+.art-label { bottom: 7%; color: #7e8874; font: 7px Arial, sans-serif; letter-spacing: 1.4px; position: absolute; right: 6%; }
+.collection { background: #fff; padding: 47px 7.5% 56px; }
+.collection-heading { align-items: end; display: flex; justify-content: space-between; margin: 0 auto 25px; max-width: 1100px; }
+.collection-heading .eyebrow { margin-bottom: 8px; }
+.collection-heading h2 { font-size: 28px; font-weight: 400; letter-spacing: -.7px; margin: 0; }
+.collection-heading > a { color: #647a60; font: 11px Arial, sans-serif; }
+.collection-heading > a span { font-size: 15px; margin-left: 7px; }
+.product-grid { display: grid; gap: 18px; grid-template-columns: repeat(3, 1fr); margin: auto; max-width: 1100px; }
+.product-card > p { color: #879084; font: 8px Arial, sans-serif; letter-spacing: 1.1px; margin: 14px 0 6px; }
+.product-card h3 { font-size: 14px; font-weight: 400; margin: 0 0 6px; }
+.product-card > span { color: #657160; font: 11px Arial, sans-serif; }
+.product-art { align-items: center; display: flex; height: 175px; justify-content: center; overflow: hidden; position: relative; }
+.art-candle { background: #eee8dd; }
+.art-candle span { background: #e6d9c2; border: 1px solid #d8cbb5; border-radius: 4px 4px 8px 8px; height: 83px; position: relative; width: 54px; }
+.art-candle span::before { background: #c4b38f; content: ""; height: 14px; left: 25px; position: absolute; top: -14px; width: 3px; }
+.art-candle span::after { border: 1px solid rgba(131,117,91,.38); content: ""; inset: 20px 8px 27px; position: absolute; }
+.art-vase { background: #e8e9df; }
+.art-vase span { background: #aaad96; border-radius: 38% 38% 34% 34% / 20% 20% 18% 18%; height: 112px; position: relative; width: 70px; }
+.art-vase span::before { background: #aaad96; border-radius: 7px 7px 0 0; content: ""; height: 27px; left: 20px; position: absolute; top: -17px; width: 30px; }
+.art-throw { background: #e9e2d9; }
+.art-throw span { background: repeating-linear-gradient(90deg, #9b806e 0 7px, #b29986 7px 14px); border-radius: 6px; height: 113px; transform: rotate(-8deg); width: 122px; }
+.diagnostics { align-items: start; background: #fffbf2; border: 1px solid #eadfc2; display: flex; gap: 16px; margin: 35px auto; max-width: 1100px; padding: 21px 23px; }
+.diagnostic-mark { align-items: center; background: #f3e7c8; border-radius: 50%; color: #876931; display: flex; flex: 0 0 28px; font: 700 15px Arial, sans-serif; height: 28px; justify-content: center; }
+.diagnostics .eyebrow { color: #9a8050; margin-bottom: 6px; }
+.diagnostics h2 { font-size: 17px; font-weight: 400; margin: 0 0 9px; }
+.diagnostics ul { color: #66695e; font: 11px/1.7 Arial, sans-serif; margin: 0; padding-left: 18px; }
+.diagnostics li + li { margin-top: 4px; }
+.diagnostics strong { color: #464d43; }
+.diagnostic-note { color: #8b8b7f; font: 10px Arial, sans-serif; margin: 10px 0 0; }
+footer { align-items: center; border-top: 1px solid var(--line); color: #8a9188; display: flex; font: 10px Arial, sans-serif; justify-content: space-between; padding: 20px 7.5%; }
+footer span:first-child { color: #53644f; font-family: Georgia, serif; font-size: 13px; font-weight: 700; }
+
+@media (max-width: 700px) {
+  .store-header { height: 62px; padding: 0 5%; }
+  .store-brand { font-size: 15px; }
+  .store-header nav { gap: 12px; }
+  .store-header nav a { font-size: 9px; }
+  .cart-button { font-size: 9px; padding: 7px 8px; }
+  .hero { gap: 27px; grid-template-columns: 1fr; padding: 42px 7%; }
+  .hero h1 { font-size: 51px; }
+  .hero-art { height: 280px; }
+  .collection { padding: 38px 7%; }
+  .collection-heading h2 { font-size: 21px; }
+  .product-grid { gap: 10px; }
+  .product-art { height: 116px; }
+  .product-card h3 { font-size: 11px; }
+  .product-card > p { font-size: 7px; }
+  .diagnostics { margin: 24px 5%; padding: 15px; }
+  footer { align-items: start; flex-direction: column; gap: 8px; }
+}

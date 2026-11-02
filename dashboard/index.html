@@ -1,0 +1,189 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#111827">
+    <title>WebGuard | Test dashboard</title>
+    <link rel="stylesheet" href="/styles.css">
+    <script src="/app.js" defer></script>
+  </head>
+  <body>
+    <div class="app-shell">
+      <aside class="sidebar" aria-label="Main navigation">
+        <a class="brand" href="/" aria-label="WebGuard dashboard">
+          <span class="brand-mark">W</span>
+          <span class="brand-name">webguard<span class="brand-period">.</span></span>
+        </a>
+
+        <div class="nav-caption">WORKSPACE</div>
+        <nav class="side-nav">
+          <a class="nav-item active" href="#overview" aria-current="page" aria-label="Overview">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="8" height="8" rx="2"/><rect x="13" y="3" width="8" height="5" rx="2"/><rect x="13" y="10" width="8" height="11" rx="2"/><rect x="3" y="13" width="8" height="8" rx="2"/></svg>
+            <span>Overview</span>
+          </a>
+          <a class="nav-item" href="#activity" aria-label="Test activity">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 5h16M4 12h16M4 19h10"/><circle cx="18" cy="19" r="2"/></svg>
+            <span>Test activity</span>
+            <span class="nav-count" id="nav-run-count">0</span>
+          </a>
+        </nav>
+
+        <div class="sidebar-bottom">
+          <div class="connection-card">
+            <span class="connection-icon"><span class="pulse-dot"></span></span>
+            <div>
+              <strong>Local runner</strong>
+              <span>Connected on this device</span>
+            </div>
+          </div>
+          <a class="sidebar-docs" href="https://playwright.dev/docs/intro" target="_blank" rel="noreferrer">
+            <span>Built with Playwright</span>
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg>
+          </a>
+        </div>
+      </aside>
+
+      <main class="main-content" id="overview">
+        <header class="topbar">
+          <div class="breadcrumb"><span>Workspace</span><span class="crumb-slash">/</span><strong>Overview</strong></div>
+          <div class="topbar-right">
+            <span class="local-badge"><span class="pulse-dot"></span> Local workspace</span>
+            <span class="avatar" aria-label="WebGuard workspace">WG</span>
+          </div>
+        </header>
+
+        <div class="page-content">
+          <section class="welcome-row">
+            <div>
+              <p class="eyebrow"><span class="eyebrow-line"></span> TEST AUTOMATION WORKSPACE</p>
+              <h1>Testing, with a<br class="mobile-break"> clearer signal<span class="heading-dot">.</span></h1>
+              <p class="welcome-copy">Run your smoke test, watch it work, and get a clear result in one place.</p>
+            </div>
+            <div class="welcome-side">
+              <div class="date-label">YOUR PROJECT</div>
+              <div class="project-chip"><span class="project-chip-icon">W</span><span>WebGuard <span class="starter-label">STARTER</span></span></div>
+            </div>
+          </section>
+
+          <section class="stats-grid" aria-label="Run summary">
+            <article class="stat-card">
+              <div class="stat-top"><span class="stat-label">TOTAL RUNS</span><span class="stat-icon icon-lilac"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5h11a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H8a2 2 0 0 1-2-2V7a2 2 0 0 1 2-2Z"/><path d="M3 17V4a2 2 0 0 1 2-2h11M10 10h7M10 14h7"/></svg></span></div>
+              <div class="stat-value" id="stat-total">0</div>
+              <div class="stat-foot"><span class="foot-muted">Since this dashboard opened</span></div>
+            </article>
+            <article class="stat-card">
+              <div class="stat-top"><span class="stat-label">PASSED</span><span class="stat-icon icon-green"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m5 12 4 4L19 6"/></svg></span></div>
+              <div class="stat-value" id="stat-passed">0</div>
+              <div class="stat-foot"><span class="status-dot dot-green"></span><span class="foot-muted">Successful browser runs</span></div>
+            </article>
+            <article class="stat-card">
+              <div class="stat-top"><span class="stat-label">NEEDS ATTENTION</span><span class="stat-icon icon-amber"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 9v4m0 4h.01"/><path d="M10.3 3.9 2.6 17.2A2 2 0 0 0 4.3 20h15.4a2 2 0 0 0 1.7-2.8L13.7 3.9a2 2 0 0 0-3.4 0Z"/></svg></span></div>
+              <div class="stat-value" id="stat-failed">0</div>
+              <div class="stat-foot"><span class="status-dot dot-amber"></span><span class="foot-muted">Failed browser runs</span></div>
+            </article>
+          </section>
+
+          <div class="section-heading">
+            <div>
+              <h2>Start a test run</h2>
+              <p>Choose a browser and target, then launch the homepage smoke test.</p>
+            </div>
+            <span class="suite-label"><span class="suite-dot"></span> 1 smoke test</span>
+          </div>
+
+          <section class="run-card" aria-labelledby="run-card-title">
+            <div class="run-card-header">
+              <div class="run-card-title-wrap">
+                <span class="run-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 5h16v14H4z"/><path d="m10 9 5 3-5 3z"/></svg></span>
+                <div>
+                  <h3 id="run-card-title">Homepage smoke test</h3>
+                  <p>Checks the page title and main heading are visible</p>
+                </div>
+              </div>
+              <span class="ready-pill"><span class="status-dot dot-green"></span> Ready to run</span>
+            </div>
+
+            <div class="run-card-body">
+              <label class="field-label" for="target-url">TARGET URL <span class="field-hint">Use the expected site or the built-in fault demo</span></label>
+              <div class="url-input-wrap">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3a15 15 0 0 1 0 18M12 3a15 15 0 0 0 0 18"/></svg>
+                <input id="target-url" name="targetUrl" type="url" value="https://automationexercise.com" placeholder="https://example.com" autocomplete="url" required>
+                <span class="url-secure"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="4" y="10" width="16" height="11" rx="2"/><path d="M8 10V7a4 4 0 0 1 8 0v3"/></svg> URL</span>
+              </div>
+              <div class="field-error" id="form-error" role="alert" hidden></div>
+              <div class="target-actions">
+                <button class="demo-target-button" id="demo-target-button" type="button">Use built-in fault demo</button>
+                <a class="demo-preview-link" href="/demo-site" target="_blank" rel="noreferrer">Preview demo website</a>
+              </div>
+              <p class="demo-explanation">The demo is intentionally faulty: it has the wrong page title and a missing expected heading. Run it to see both diagnostics in the results.</p>
+
+              <div class="browser-label-row">
+                <span class="field-label">BROWSER ENGINE</span>
+                <span class="field-hint">Select one project</span>
+              </div>
+              <fieldset class="browser-options" aria-label="Browser engine">
+                <label class="browser-option selected">
+                  <input type="radio" name="project" value="chromium" checked>
+                  <span class="browser-logo chromium-logo"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="3.5"/><path d="M3.8 7.5h8.5M8.2 19.8l4.3-7.5M20.2 8l-4.1 7"/></svg></span>
+                  <span class="browser-name">Chromium</span>
+                  <span class="browser-meta">Desktop Chrome</span>
+                  <span class="radio-indicator"></span>
+                </label>
+                <label class="browser-option">
+                  <input type="radio" name="project" value="webkit">
+                  <span class="browser-logo webkit-logo"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3c-3 0-5.3 2-5.3 4.7 0 1.8 1.1 3.1 2.4 4.3-1.6-.3-3.2-.2-4.4.8-1.3 1-1.7 2.7-.7 4.5 1.3 2.2 4.5 3.4 8.2 3.4 5.2 0 8.7-2.9 8.7-7.3 0-5.6-4-10.4-8.9-10.4Z"/><path d="M9 8c1.4-.8 4-.8 5.4 0M8.3 15.7h.1m3.7 1.4h.1m3.3-2h.1"/></svg></span>
+                  <span class="browser-name">WebKit</span>
+                  <span class="browser-meta">Desktop Safari</span>
+                  <span class="radio-indicator"></span>
+                </label>
+                <label class="browser-option">
+                  <input type="radio" name="project" value="firefox">
+                  <span class="browser-logo firefox-logo"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M19.7 8.4c-.5-2.8-2.2-4.6-4.5-5.4.6 1.2.6 2.3.2 3.1-1-2.1-2.8-3.4-5.2-3.5.5.7.7 1.4.7 2.2-2.1.3-4.1 1.7-5.1 3.5-2.2 4.1-.7 9.3 3.8 11.4 4.6 2.2 10.1-.2 10.9-4.9.4-2.4-.1-4.3-1.4-5.8.4 1.5-.2 2.2-.9 2.4.1-1.1-.2-2.1-1-2.8.2 1.7-.8 2.7-2.1 2.7-1.4 0-2.2-.9-2.2-2.1 0-1.3.9-2.1 2.4-2.1 1.4 0 2.8.5 4.4 1.3Z"/></svg></span>
+                  <span class="browser-name">Firefox</span>
+                  <span class="browser-meta">Optional / may need setup</span>
+                  <span class="radio-indicator"></span>
+                </label>
+              </fieldset>
+
+              <div class="run-card-footer">
+                <div class="run-note"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 16v-4m0-4h.01"/><circle cx="12" cy="12" r="9"/></svg><span>Runs locally on your machine. Results are not uploaded.</span></div>
+                <button class="run-button" id="run-button" type="button">
+                  <svg class="button-play" viewBox="0 0 24 24" aria-hidden="true"><path d="m8 5 11 7-11 7z"/></svg>
+                  <span>Run smoke test</span>
+                  <svg class="button-arrow" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6"/></svg>
+                </button>
+              </div>
+            </div>
+          </section>
+
+          <section class="activity-section" id="activity">
+            <div class="activity-heading">
+              <div>
+                <h2>Recent activity</h2>
+                <p>Your latest runs from this dashboard session.</p>
+              </div>
+              <button class="refresh-button" id="refresh-button" type="button" aria-label="Refresh run history" title="Refresh run history">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 7v5h-5M4 17v-5h5"/><path d="M5.5 9a7 7 0 0 1 11.8-2L20 12M4 12l2.7 5a7 7 0 0 0 11.8-2"/></svg>
+              </button>
+            </div>
+            <div class="activity-card">
+              <div class="activity-empty" id="activity-empty">
+                <span class="empty-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5h11a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H8a2 2 0 0 1-2-2V7a2 2 0 0 1 2-2Z"/><path d="M3 17V4a2 2 0 0 1 2-2h11M10 10h7M10 14h7"/></svg></span>
+                <strong>No runs yet</strong>
+                <span>Launch your first smoke test to see it here.</span>
+              </div>
+              <div class="run-list" id="run-list" hidden></div>
+            </div>
+          </section>
+
+          <footer class="page-footer">
+            <span>WebGuard <span class="footer-divider">/</span> local test dashboard</span>
+            <span>Built for repeatable checks <span class="footer-spark">✳</span></span>
+          </footer>
+        </div>
+      </main>
+    </div>
+    <div class="toast" id="toast" role="status" aria-live="polite"></div>
+  </body>
+</html>

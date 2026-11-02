@@ -4,6 +4,7 @@
   "private": true,
   "description": "TypeScript and Playwright starter framework for web application smoke testing",
   "scripts": {
+    "dashboard": "node dashboard/server.js",
     "test": "playwright test",
     "test:chromium": "playwright test --project=chromium",
     "test:all-browsers": "playwright test"

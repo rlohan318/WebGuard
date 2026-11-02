@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#f5f2eb">
+    <title>WebGuard Demo | Broken Homepage</title>
+    <link rel="stylesheet" href="/demo-site.css">
+  </head>
+  <body>
+    <header class="store-header">
+      <a class="store-brand" href="/demo-site"><span class="store-mark">M</span> Maple &amp; Main</a>
+      <nav aria-label="Store navigation">
+        <a href="#collection">Shop</a>
+        <a href="#about">Our story</a>
+        <a href="#diagnostics">Test notes</a>
+      </nav>
+      <button class="cart-button" type="button" aria-label="Shopping bag, 0 items">Bag <span>0</span></button>
+    </header>
+
+    <main>
+      <section class="hero">
+        <div class="hero-copy">
+          <p class="eyebrow"><span></span> SMALL FINDS, BIG JOY</p>
+          <h1>Little things.<br><em>Lovely living.</em></h1>
+          <p class="intro">Thoughtful objects for slow mornings, cozy corners, and the everyday in between.</p>
+          <a class="shop-button" href="#collection">Explore the collection <span>↗</span></a>
+          <div class="hero-caption"><span class="caption-line"></span> MADE FOR THE EVERYDAY</div>
+        </div>
+        <div class="hero-art" role="img" aria-label="Illustration of home decor, a vase and a plant">
+          <div class="sun-disc"></div>
+          <div class="art-shadow"></div>
+          <div class="plant-pot"></div>
+          <div class="plant-stem stem-one"></div>
+          <div class="plant-stem stem-two"></div>
+          <div class="plant-stem stem-three"></div>
+          <div class="leaf leaf-one"></div>
+          <div class="leaf leaf-two"></div>
+          <div class="leaf leaf-three"></div>
+          <div class="vase"><span></span></div>
+          <div class="art-label">A HOME, A LITTLE MORE YOU.</div>
+        </div>
+      </section>
+
+      <section class="collection" id="collection">
+        <div class="collection-heading">
+          <div><p class="eyebrow">THE GOOD STUFF</p><h2>Made to make you smile.</h2></div>
+          <a href="#collection">View all <span>→</span></a>
+        </div>
+        <div class="product-grid">
+          <article class="product-card"><div class="product-art art-candle"><span></span></div><p>THE SOFT GLOW</p><h3>Sunday Morning Candle</h3><span>$24</span></article>
+          <article class="product-card"><div class="product-art art-vase"><span></span></div><p>HAND-FINISHED STONEWARE</p><h3>Everyday Ceramic Vase</h3><span>$38</span></article>
+          <article class="product-card"><div class="product-art art-throw"><span></span></div><p>100% COTTON</p><h3>The Slow Sunday Throw</h3><span>$68</span></article>
+        </div>
+      </section>
+
+      <section class="diagnostics" id="diagnostics" aria-labelledby="diagnostic-title">
+        <div class="diagnostic-mark">!</div>
+        <div>
+          <p class="eyebrow">WEBGUARD TEST FIXTURE</p>
+          <h2 id="diagnostic-title">This sample has two intentional defects.</h2>
+          <ul>
+            <li><strong>Page title mismatch:</strong> the browser title is “WebGuard Demo | Broken Homepage,” not “Automation Exercise.”</li>
+            <li><strong>Expected heading is missing:</strong> the page has “Little things. Lovely living.” instead of “Full-Fledged practice website for Automation Engineers.”</li>
+          </ul>
+          <p class="diagnostic-note">Run the homepage smoke test from the dashboard to see both issues reported in the test output.</p>
+        </div>
+      </section>
+    </main>
+    <footer id="about"><span>Maple &amp; Main</span><span>A local WebGuard demo fixture · No external site required</span></footer>
+  </body>
+</html>
