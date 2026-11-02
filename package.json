@@ -1,0 +1,16 @@
+{
+  "name": "webguard",
+  "version": "1.0.0",
+  "private": true,
+  "description": "TypeScript and Playwright starter framework for web application smoke testing",
+  "scripts": {
+    "test": "playwright test",
+    "test:chromium": "playwright test --project=chromium",
+    "test:all-browsers": "playwright test"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.56.1",
+    "@types/node": "^24.10.0",
+    "typescript": "^5.9.3"
+  }
+}
